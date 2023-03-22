@@ -1,0 +1,22 @@
+.padding{
+    padding-top: 20px;
+}
+h1,h3{
+    display: inline;
+}
+ul{
+    padding: 10px;
+}
+.row{
+    margin-right: 0;
+    margin-left: 0;
+}
+#margen{
+    padding: 20px;
+}
+#padding1{
+    padding: 20px;
+}
+ul{
+    padding: 20px;
+}

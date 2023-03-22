@@ -1,0 +1,58 @@
+.row{
+    margin-right: 0;
+    margin-left: 0;
+}
+
+#nombre{
+    font-weight: bold;
+    margin-top: 10%;
+}
+div{
+    text-align: center;
+    
+}
+#divdehacercadegral{
+    
+    /* color: rgb(60, 60, 156); */
+    margin-bottom: 27px;
+}
+#paddingh1{
+    padding: 15px;
+    margin-top: 8px;
+}
+#paddingp{
+    padding: 10px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+@media(min-width: 576px){
+    #fotoperfil{
+        position: absolute;
+        width: 15%;
+        border-radius: 100%;
+        /* box-shadow: 3px 3px 3px grey; */
+        left: 17%;
+        top: 327px;
+    }
+}
+@media(min-width: 1116px){
+    #spanmover{
+        left: 5%;
+        top: 80px;
+        position: relative;
+    }
+}
+@media(min-width: 742px) and (max-width:1115px){
+    #spanmover{
+        left: 5%;
+        top: 132px;
+        position: relative;
+    }
+}
+@media(min-width: 576px) and (max-width:741px){
+    #spanmover{
+        left: 5%;
+        top: 160px;
+        position: relative;
+    }
+}

@@ -1,0 +1,22 @@
+#padding1{
+    padding: 20px;
+}
+.nopadding{
+    padding: 0%;
+}
+.row{
+    margin-right: 0;
+    margin-left: 0;
+}
+.paddingtopbot{
+    padding-left: 0%;
+    padding-right: 0%;
+    padding-top: 20px;
+    padding-bottom: 0%;
+}
+.progress_background{
+    background-image: url("../../../assets/html.png");
+    background-repeat: no-repeat;
+    background-position: bottom 90px right 132px;
+    background-size: 25%;
+}
