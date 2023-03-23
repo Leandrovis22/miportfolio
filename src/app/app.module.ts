@@ -30,7 +30,7 @@ import { HysComponent } from './components/hys/hys.component';
       backgroundGradient: true,
       backgroundGradientStopColor: "'transparent'",
       backgroundOpacity: 1,
-      backgroundStrokeWidth: 40,
+      backgroundStrokeWidth: 20,
       backgroundPadding: -9,
       radius: 87,
       space: -16,
