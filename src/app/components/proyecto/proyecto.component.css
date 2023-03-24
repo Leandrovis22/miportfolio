@@ -1,0 +1,40 @@
+#padding1{
+    padding: 20px;
+    margin-bottom: 40px;
+}
+.row{
+    margin-right: 0;
+    margin-left: 0;
+}
+.nopadding{
+    padding: 0%;
+}
+.paddingizqder{
+    padding-left: 58px ;
+    padding-right: 17px ;
+}
+.paddingizqder1{
+    padding-left: 0px ;
+    padding-right: 58px ;
+}
+.margen1{
+    margin-bottom: 30px;
+}
+.imgboxshadow{
+    box-shadow: 10px 10px 6px 0px rgba(36,32,214,0.67);
+-webkit-box-shadow: 10px 10px 6px 0px rgba(36,32,214,0.67);
+-moz-box-shadow: 10px 10px 6px 0px rgba(36,32,214,0.67);
+}
+@media(max-width:767px){
+    .paddingizqder{
+        padding-left: 17px ;
+        padding-right: 17px ;
+    }
+    .paddingizqder1{
+        padding-left: 6% ;
+        padding-right: 6% ;
+    }
+    h2{
+        text-align: center;
+    }
+}
