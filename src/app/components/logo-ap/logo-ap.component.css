@@ -16,4 +16,6 @@ img{
 }
 .btn{
     border-width: 2px;
+    border-color: #cfcfcf;
+    background-color: transparent;
 }
