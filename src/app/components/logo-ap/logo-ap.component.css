@@ -1,3 +1,19 @@
 #logoAP{
     width: 150px;
 }
+img{
+    width: 40px;
+    padding-right: 5px;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.btn{
+    border-width: 2px;
+}

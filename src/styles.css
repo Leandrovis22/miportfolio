@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+    font-family: 'Signika Negative';
+}
+h1, h2, h3{
+    font-weight: 700;
+}
+p{
+    font-weight: 300;
+}
