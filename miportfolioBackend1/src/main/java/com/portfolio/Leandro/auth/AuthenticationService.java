@@ -36,9 +36,12 @@ public class AuthenticationService {
                 .build();
         repository.save(user);
         var jwtToken = jwtService.generateToken(user);
+        System.out.println("User authorities en el register de AuthenticationService: " + user.getAuthorities()); // muestra por consola
+        //esto dice null
         return AuthenticationResponse.builder()
                 .token(jwtToken)
                 .build();
+        
     }
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
@@ -51,9 +54,17 @@ public class AuthenticationService {
         var user = repository.findByEmail(request.getEmail())
                 .orElseThrow();
         var jwtToken = jwtService.generateToken(user);
+        
+        var authorities = user.getAuthorities(); // Obtener las autorizaciones del usuario
+        
+        System.out.println("authorities raw en el authenticate de AuthenticationService: " + user.getAuthorities()); // muestra por consola
+        //
+        
         return AuthenticationResponse.builder()
                 .token(jwtToken)
                 .role(user.getRole().name())
+                .authorities(authorities.toString()) // Incluir las autorizaciones en el contenido del método build()
                 .build();
+        
     }
 }

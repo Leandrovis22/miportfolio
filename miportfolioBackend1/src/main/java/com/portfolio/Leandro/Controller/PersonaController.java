@@ -3,8 +3,14 @@ package com.portfolio.Leandro.Controller;
 
 import com.portfolio.Leandro.Entity.Persona;
 import com.portfolio.Leandro.Interface.IPersonaService;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import static org.hibernate.query.sqm.SqmTreeTransformationLogger.LOGGER;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,9 +31,18 @@ public class PersonaController {
         return ipersonaService.getPersona();
     }
     
+    // @PreAuthorize("hasAuthority("ADMIN")") no anda el preauthorize
     @PostMapping("/personas/crear")
     public String createPersona(@RequestBody Persona persona){
         ipersonaService.savePersona(persona);
+        
+    Collection<SimpleGrantedAuthority> authorities = (Collection<SimpleGrantedAuthority>) SecurityContextHolder
+        .getContext().getAuthentication().getAuthorities();
+         for (Iterator iterator = authorities.iterator(); iterator.hasNext();) {
+    SimpleGrantedAuthority simpleGrantedAuthority = (SimpleGrantedAuthority) iterator.next();
+        System.out.println(simpleGrantedAuthority.toString());
+    }
+        
         return "La persona fue creada correctamente";
     }
     

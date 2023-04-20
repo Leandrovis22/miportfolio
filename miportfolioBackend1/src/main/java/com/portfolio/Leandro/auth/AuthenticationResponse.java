@@ -14,5 +14,6 @@ public class AuthenticationResponse {
     
     private String token;
     private String role;
-    
+    private String authorities; //esto agregue para añadir las authorities del sistema al response builder de AuthenticationService
+        
 }
