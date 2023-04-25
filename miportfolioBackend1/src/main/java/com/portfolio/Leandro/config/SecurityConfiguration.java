@@ -31,6 +31,8 @@ public class SecurityConfiguration {
                 .requestMatchers("/auth/**")
                 .permitAll()
                 .requestMatchers("/personas/crear").hasAuthority("ADMIN")
+                .requestMatchers("/personas/borrar/**").hasAuthority("ADMIN")
+                .requestMatchers("/personas/editar/**").hasAuthority("ADMIN")
                 .anyRequest()
                 .authenticated()
                 )
