@@ -12,9 +12,11 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 @Service
 @RequiredArgsConstructor
+@CrossOrigin(origins = "*")
 public class AuthenticationService {
 
     private final UserRepository repository;
@@ -22,6 +24,7 @@ public class AuthenticationService {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
 
+    
     public AuthenticationResponse register(RegisterRequest request) {
         var userRole = Role.USER;
         if (request.getRole() != null && request.getRole().contains("admin")) {
@@ -44,6 +47,7 @@ public class AuthenticationService {
         
     }
 
+    
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
@@ -55,15 +59,13 @@ public class AuthenticationService {
                 .orElseThrow();
         var jwtToken = jwtService.generateToken(user);
         
-        var authorities = user.getAuthorities(); // Obtener las autorizaciones del usuario
-        
         System.out.println("authorities raw en el authenticate de AuthenticationService: " + user.getAuthorities()); // muestra por consola
         //
         
         return AuthenticationResponse.builder()
                 .token(jwtToken)
-                .role(user.getRole().name())
-                .authorities(authorities.toString()) // Incluir las autorizaciones en el contenido del método build()
+                .userName(user.getFirstname())
+                .authorities(user.getAuthorities())
                 .build();
         
     }

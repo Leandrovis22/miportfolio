@@ -1,11 +1,8 @@
-
 package com.portfolio.Leandro.config;
 
-import jakarta.servlet.Filter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.annotation.Order;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -17,11 +14,10 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfiguration {
-    
+
     private final JwtAuthenticationFilter jwtAuthFilter;
     private final AuthenticationProvider authenticationProvider;
-    
-    
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
@@ -41,7 +37,7 @@ public class SecurityConfiguration {
                 .and()
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
-        
+
         return http.build();
     }
     /*
@@ -64,8 +60,8 @@ public class SecurityConfiguration {
         
         return http.build();
     }
-    */
-    /* quize hacer esto para solucionar el problema del role admin para personas/crear, no funciono
+     */
+ /* quize hacer esto para solucionar el problema del role admin para personas/crear, no funciono
     @Bean
 	@Order(1)                                                        
     public SecurityFilterChain crearFilterChain(HttpSecurity http) throws Exception {
@@ -86,5 +82,5 @@ public class SecurityConfiguration {
         
         return http.build();
 	}
-*/
+     */
 }

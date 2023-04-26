@@ -6,6 +6,8 @@ img{
     padding-right: 5px;
 }
 .container{
+    padding-left: 0px;
+    padding-right: 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,3 +21,9 @@ img{
     color: white;
     background-color: transparent;
 }
+.redes a:nth-child(3) {
+    margin-right: 5px;
+  }
+  .redes a:nth-child(4) {
+    margin-right: 10px;
+  }

@@ -1,10 +1,12 @@
 
 package com.portfolio.Leandro.auth;
 
+import java.util.Collection;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
 
 @Data
 @Builder
@@ -13,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class AuthenticationResponse {
     
     private String token;
-    private String role;
-    private String authorities; //esto agregue para añadir las authorities del sistema al response builder de AuthenticationService
-        
+    private String userName;
+    private Collection<? extends GrantedAuthority> authorities;
+    
 }
