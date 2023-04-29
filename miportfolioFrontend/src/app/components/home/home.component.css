@@ -1,27 +1,5 @@
-.wrapper {
-    animation: scroll 70s linear infinite;
-    background: url(../../../assets/fondo.jpg), #111111;
-    color: #ececec;
-    height:100%;
-    width:100%;
-    perspective: 1000px;
-    perspective-origin: 50% 50%;
-    }
-    
-    @keyframes scroll {
-        100%{
-        background-position:0px -3000px;
-      }
-    }
-    
-    @media (prefers-reduced-motion) {
-      .wrapper {
-        animation: scroll 200s linear infinite;
-      }
-    }
-    
-    #margen{
-    margin-left: 10%;
-    margin-right: 10%;
-    background-color: black;
-    }
+  #margen{
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: black;
+}

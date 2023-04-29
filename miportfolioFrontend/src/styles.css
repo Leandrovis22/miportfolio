@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 html, body {
     font-family: 'Signika Negative';
+    height: 100%;
 }
 h1, h2, h3{
     font-weight: 700;
@@ -8,3 +9,25 @@ h1, h2, h3{
 p{
     font-weight: 300;
 }
+
+.wrapper {
+    animation: scroll 70s linear infinite;
+    background: url(../../../assets/fondo.jpg), #111111;
+    color: #ececec;
+    
+    width:100%;
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+    }
+    
+    @keyframes scroll {
+        100%{
+        background-position:0px -3000px;
+      }
+    }
+    
+    @media (prefers-reduced-motion) {
+      .wrapper {
+        animation: scroll 200s linear infinite;
+      }
+    }
