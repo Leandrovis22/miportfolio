@@ -24,7 +24,7 @@ public class SecurityConfiguration {
                 .csrf()
                 .disable()
                 .authorizeHttpRequests((authorize) -> authorize
-                .requestMatchers("/auth/**")
+                .requestMatchers("/**")
                 .permitAll()
                 .requestMatchers("/personas/crear").hasAuthority("ADMIN")
                 .requestMatchers("/personas/borrar/**").hasAuthority("ADMIN")
