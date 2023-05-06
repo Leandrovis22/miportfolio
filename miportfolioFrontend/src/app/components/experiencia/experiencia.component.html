@@ -15,7 +15,7 @@
                         </button>
                     </td>
                     <td *ngIf="islogged">
-                        <button type="button" class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .37rem;" id="btn_exp">
+                        <button type="button" (click)="delete(Experiencia.id)" class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .37rem;" id="btn_exp">
                             <i class="bi bi-trash" style="font-size: 1.2rem; color: white;"></i>
                         </button>
                     </td>
