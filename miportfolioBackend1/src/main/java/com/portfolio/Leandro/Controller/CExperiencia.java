@@ -52,7 +52,7 @@ public ResponseEntity<?> create(@RequestBody dtoExperiencia dtoexp){
 
     }
 
-@PutMapping("/update/(id)")
+@PutMapping("/update/{id}")
 public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoExperiencia dtoexp){
     if(!sExperiencia.existsById(id))
         return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.BAD_REQUEST);
@@ -71,7 +71,7 @@ public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoExpe
     return new ResponseEntity(new Mensaje("Experiencia actualizada"), HttpStatus.OK);
 
     }
-@DeleteMapping("/delete/(id)")
+@DeleteMapping("/delete/{id}")
 public ResponseEntity<?> delete(@PathVariable("id") int id){
 
     if(!sExperiencia.existsById(id))
@@ -81,6 +81,14 @@ public ResponseEntity<?> delete(@PathVariable("id") int id){
     sExperiencia.delete(id);
 
     return new ResponseEntity(new Mensaje("Experiencia eliminada"), HttpStatus.OK);
+    }
+
+@GetMapping("/detail/{id}")
+    public ResponseEntity<Experiencia> getById(@PathVariable("id") int id){
+        if(!sExperiencia.existsById(id))
+            return new ResponseEntity(new Mensaje("no existe"), HttpStatus.NOT_FOUND);
+        Experiencia experiencia = sExperiencia.getOne(id).get();
+        return new ResponseEntity(experiencia, HttpStatus.OK);
     }
 
 }

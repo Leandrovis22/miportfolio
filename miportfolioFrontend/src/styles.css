@@ -12,7 +12,7 @@ p{
 
 .wrapper {
     animation: scroll 70s linear infinite;
-    background: url(../../../assets/fondo.jpg), #111111;
+    background: url(../src/assets/fondo1.jpg), #111111;
     color: #ececec;
     
     width:100%;

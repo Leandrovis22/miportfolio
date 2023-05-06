@@ -9,8 +9,16 @@
                 <tr *ngFor="let Experiencia of expe">
                     <td>{{Experiencia.nombreE}}</td>
                     <td>{{Experiencia.descripcionE}}</td>
-                    <td><i class="bi bi-pen" style="color: white;"></i></td>
-                    <td><i class="bi bi-trash" style="font-size: 1.2rem; color: white;"></i></td>
+                    <td *ngIf="islogged">
+                        <button type="button" routerLink="/editexp/{{Experiencia.id}}" class="btn btn-primary" style="--bs-btn-padding-x: .4rem;" id="btn_exp">
+                            <i class="bi bi-pen" style="color: white;"></i>
+                        </button>
+                    </td>
+                    <td *ngIf="islogged">
+                        <button type="button" class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .37rem;" id="btn_exp">
+                            <i class="bi bi-trash" style="font-size: 1.2rem; color: white;"></i>
+                        </button>
+                    </td>
                 </tr>
             </tbody>
         </table>
