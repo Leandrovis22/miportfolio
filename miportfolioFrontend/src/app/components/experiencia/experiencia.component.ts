@@ -53,7 +53,7 @@ export class ExperienciaComponent implements OnInit{
     "dots": true,
     "infinite": true,
     "autoplay": true,
-    "autoplaySpeed": 2500
+    "autoplaySpeed": 3500
   };
   
   

@@ -4,7 +4,7 @@
         <button type="button" class="btn btn-primary" id="btn_exp" routerLink="/nuevaexp" *ngIf="islogged">
             Nueva Experiencia
         </button>
-        <table class="table">
+        <table class="table" *ngIf="islogged">
             <tbody>
                 <tr *ngFor="let Experiencia of expe">
                     <td>{{Experiencia.nombreE}}</td>
@@ -49,18 +49,88 @@
   </div>
   Write your comments here -->
 
-  <div class="slick-wrapper">
-    <ngx-slick-carousel class="carousel" 
-      #slickModal="slick-carousel" 
-      [config]="slideConfig" 
-      (init)="slickInit($event)"
-      (breakpoint)="breakpoint($event)"
-      (afterChange)="afterChange($event)"
-      (beforeChange)="beforeChange($event)">
-    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-      <img src="{{ slide.img }}" alt="" width="100%">
-    </div>
+  
+  <div class="slick-wrapper" data-bs-theme="dark-mode">
+    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+      <div ngxSlickItem *ngFor="let Experiencia of expe; let i=index" class="slide">
+        <div class="card card-custom-{{i}}" style="height: 450px;">
+          <div class="card-body">
+            <h5 class="card-title">{{Experiencia.nombreE}}</h5>
+            <p class="card-text">{{Experiencia.descripcionE}}</p>
+          </div>
+        </div>
+      </div>
     </ngx-slick-carousel>
   </div>
   
+  <style>
+    .card{
+        color: white;
+        justify-content: center;
+    }
+    .card-body{
+        display: flex;
+  align-items: center; /* center vertically */
+  justify-content: center; /* center horizontally */
+  text-align: center;
+  flex-direction: column;
+    }
+    .card-custom-1 {
+  background-color: rgba(28, 21, 92, 0.637); /* HSV(0, 68%, 55%) */
+}
+
+.card-custom-2 {
+  background-color: rgba(45, 25, 99, 0.5); /* HSV(0, 68%, 62%) */
+}
+
+.card-custom-3 {
+  background-color: rgba(79, 74, 42, 0.5); /* HSV(182, 47%, 31%) */
+}
+
+.card-custom-4 {
+  background-color: rgba(106, 62, 32, 0.5); /* HSV(0, 70%, 41%) */
+}
+
+.card-custom-5 {
+  background-color: rgba(69, 46, 96, 0.5); /* HSV(185, 50%, 38%) */
+}
+
+.card-custom-6 {
+  background-color: rgba(29, 54, 78, 0.5); /* HSV(187, 53%, 33%) */
+}
+
+.card-custom-0 {
+  background-color: rgba(66, 23, 77, 0.5); /* HSV(183, 44%, 37%) */
+}
+
+.card-custom-8 {
+  background-color: rgba(24, 94, 61, 0.5); /* HSV(0, 75%, 50%) */
+}
+
+.card-custom-9 {
+  background-color: rgba(64, 102, 105, 0.5); /* HSV(186, 39%, 40%) */
+}
+
+.card-custom-10 {
+  background-color: rgba(22, 58, 87, 0.5); /* HSV(0, 71%, 70%) */
+}
+
+.card-custom-11 {
+  background-color: rgba(75, 24, 24, 0.5); /* red with 50% opacity */
+}
+
+.card-custom-12 {
+  background-color: rgba(29, 88, 99, 0.5); /* HSV(0, 76%, 78%) */
+}
+
+.card-custom-13 {
+  background-color: rgba(27, 82, 83, 0.5); /* HSV(183, 24%, 55%) */
+}
+
+.card-custom-7 {
+  background-color: rgba(82, 24, 24, 0.5); /* HSV(0, 85%, 88%) */
+}
+
+
+  </style>
   
