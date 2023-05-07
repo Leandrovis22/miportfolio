@@ -42,4 +42,3 @@ export class ExperienciaComponent implements OnInit{
   }
 }
 
-
