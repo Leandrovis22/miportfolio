@@ -4,6 +4,7 @@
  */
 package com.portfolio.Leandro.Entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,6 +16,7 @@ public class Experiencia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombreE;
+    @Column(length = 1000)
     private String descripcionE;
 
     public Experiencia() {
