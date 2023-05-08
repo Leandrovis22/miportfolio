@@ -1,33 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
-html, body {
-    font-family: 'Signika Negative';
-    height: 100%;
+html,
+body {
+  font-family: 'Signika Negative';
+  height: 100%;
 }
-h1, h2, h3{
-    font-weight: 700;
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
 }
-p{
-    font-weight: 300;
+
+p {
+  font-weight: 300;
 }
 
 .wrapper {
-    animation: scroll 70s linear infinite;
-    background: url(../src/assets/fondo1.jpg), #111111;
-    color: #ececec;
-    
-    width:100%;
-    perspective: 1000px;
-    perspective-origin: 50% 50%;
-    }
-    
-    @keyframes scroll {
-        100%{
-        background-position:0px -3000px;
-      }
-    }
-    
-    @media (prefers-reduced-motion) {
-      .wrapper {
-        animation: scroll 200s linear infinite;
-      }
-    }
+  animation: scroll 70s linear infinite;
+  background: url(../src/assets/fondo1.jpg), #111111;
+  color: #ececec;
+
+  width: 100%;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+}
+
+@keyframes scroll {
+  100% {
+    background-position: 0px -3000px;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .wrapper {
+    animation: scroll 200s linear infinite;
+  }
+}
+
+.slick-next:before {
+  content: "" !important;
+  display: inline-block;
+  width: 60px;
+  height: 96px;
+  position: relative;
+  top: -32px;
+  background: url(../src/assets/der.png) no-repeat 0 0;
+  background-size: 100%;
+  opacity: .55 !important;
+}
+
+.slick-prev:before {
+  content: "" !important;
+  display: inline-block;
+  width: 60px;
+  height: 96px;
+  position: relative;
+  top: -32px;
+  left: -200%;
+  background: url(../src/assets/izq.png) no-repeat 0 0;
+  background-size: 100%;
+  opacity: .55 !important;
+}

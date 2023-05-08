@@ -46,9 +46,10 @@ export class ExperienciaComponent implements OnInit{
   slideConfig = {
     "slidesToShow": 2,
     "slidesToScroll": 1,
+    "arrows": true,
     "dots": true,
     "infinite": true,
-    "autoplay": false,
+    "autoplay": true,
     "autoplaySpeed": 3000
   };
   
