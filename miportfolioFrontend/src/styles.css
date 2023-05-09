@@ -74,3 +74,6 @@ p {
   opacity: .75 !important;
   color: rgb(255, 255, 255) !important;
 }
+.slick-dots {
+  bottom: -35px !important;
+}
