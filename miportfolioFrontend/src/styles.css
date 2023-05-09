@@ -61,3 +61,16 @@ p {
   background-size: 100%;
   opacity: .55 !important;
 }
+.slick-dots li button:before {
+  font-size: 11px !important;
+  opacity: .25 !important;
+  color: white !important;
+    
+}
+.slick-dots li {
+  margin: 0 3px !important;
+}
+.slick-dots li.slick-active button:before {
+  opacity: .75 !important;
+  color: rgb(255, 255, 255) !important;
+}
