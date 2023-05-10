@@ -111,3 +111,38 @@ background-color: rgba(27, 82, 83, 0.5); /* HSV(183, 24%, 55%) */
 .card-custom-7 {
 background-color: rgba(82, 24, 24, 0.5); /* HSV(0, 85%, 88%) */
 }
+
+.list-group-item{
+    color: aliceblue; 
+    background-color: black;
+}
+.row.card{
+    flex-direction: row;
+    background-color: inherit;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: white; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ffffff6e; 
+  }
