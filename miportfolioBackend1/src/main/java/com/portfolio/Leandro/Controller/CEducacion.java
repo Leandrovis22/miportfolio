@@ -40,23 +40,30 @@ public ResponseEntity<List<Educacion>> list() {
 }
 
 @PostMapping("/create")
-public ResponseEntity<?> create(@RequestParam("nombreEdu") String nombreEdu,
-                                @RequestParam("descripcionEdu") String descripcionEdu,
-                                @RequestParam("image") MultipartFile image) throws IOException {
-    if(StringUtils.isBlank(nombreEdu))
-        return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
-    if(sEducacion.existsByNombreEdu(nombreEdu))
-        return new ResponseEntity(new Mensaje("Esa educacion existe"), HttpStatus.BAD_REQUEST);
+public ResponseEntity<?> create(@ModelAttribute dtoEducacion dtoedu) throws IOException {
+    String nombreEdu = dtoedu.getNombreEdu();
+    String descripcionEdu = dtoedu.getDescripcionEdu();
+    MultipartFile image = dtoedu.getImage();
 
-    
+    if (StringUtils.isBlank(nombreEdu)) {
+        return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
+    }
+    if (sEducacion.existsByNombreEdu(nombreEdu)) {
+        return new ResponseEntity(new Mensaje("Esa educacion existe"), HttpStatus.BAD_REQUEST);
+    }
+    if (image == null) {
+        return new ResponseEntity(new Mensaje("La imagen es obligatoria"), HttpStatus.BAD_REQUEST);
+    }
+
     byte[] compressedImageData = ImageUtil.compressImage(image.getBytes());
-    
+
     Educacion educacion = new Educacion(nombreEdu, descripcionEdu, compressedImageData);
-    
+
     sEducacion.save(educacion);
     return new ResponseEntity(new Mensaje("Educacion agregada"), HttpStatus.OK);
+}
 
-    }
+
 
 
 @PutMapping("/update/{id}")
@@ -64,7 +71,7 @@ public ResponseEntity<?> update(@PathVariable("id") int id, @ModelAttribute dtoE
     if(StringUtils.isBlank(dtoedu.getNombreEdu()))
         return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
 
-    boolean isImageUpdated = dtoedu.getImage() != null;
+    boolean isImageUpdated = dtoedu.getImage() != null && !dtoedu.getImage().isEmpty();
 
     if(!sEducacion.existsById(id))
         return new ResponseEntity(new Mensaje("La educación no existe"), HttpStatus.BAD_REQUEST);

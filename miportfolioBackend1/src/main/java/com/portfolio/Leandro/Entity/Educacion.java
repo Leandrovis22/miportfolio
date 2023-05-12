@@ -1,5 +1,6 @@
 package com.portfolio.Leandro.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,6 +21,7 @@ public class Educacion {
     @Transient
     private byte[] decompressedImageData;
     
+    @JsonIgnore
     @Column(columnDefinition = "MEDIUMBLOB")
     @Lob
     private byte[] imageData;

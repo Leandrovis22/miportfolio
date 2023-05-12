@@ -30,37 +30,3 @@
   </ngx-slick-carousel>
 </div>
 
-<div class="col-md-7">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <h3 class="mb-0">Featured post</h3>
-          <div class="mb-1 text-body-secondary" style="color: white !important;">Nov 12</div>
-          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-        </div>
-        <div class="col-auto d-block">
-          <img class="bd-placeholder-img" src="../../../assets/placeholder.jpg" alt="Placeholder: Thumbnail" width="200" height="250" />
-        </div>        
-      </div>
-    </div>
-
-   
-    <div class="row card">
-      <div class="col-4">
-
-        <div class="list-group" [ngStyle]="{'max-height': isScrollable() ? '337px' : 'auto', 'overflow': isScrollable() ? 'auto' : 'visible'}">
-          <div *ngFor="let item of items" (click)="updateDescription(item.description)">
-            <a class="list-group-item list-group-item-action">{{ item.category }}</a>
-          </div>
-        </div>
-        
-      </div>
-      <div class="col-8" style="padding-right: 12px; max-height: 337px;">
-        <div>
-
-          <h4>{{ description }}</h4>
-          <div style="display: flex; justify-content: center;">
-            <img style="max-height: 299px; max-width: 100%;" src="../../../assets/placeholder.jpg" alt="">
-          </div>
-        </div>
-      </div>
-    </div>

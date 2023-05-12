@@ -23,9 +23,7 @@ export class ExperienciaComponent implements OnInit{
   } else {
   this.islogged = false;
   }
-
-  this.updateDescription(this.items[0].description);
-
+  
   }
 
   cargarExperiencia(): void {
@@ -82,28 +80,5 @@ export class ExperienciaComponent implements OnInit{
     }, 100);
   }
   
-  items = [
-    { category: 'Item 1', description: 'Description for Item 1' },
-    { category: 'Item 2', description: 'Description for Item 2' },
-    { category: 'Item 3', description: 'Description for Item 3' },
-    { category: 'Item 4', description: 'Description for Item 4' },
-    { category: 'Item 5', description: 'Description for Item 5' },
-    { category: 'Item 6', description: 'Description for Item 6' },
-    { category: 'Item 7', description: 'Description for Item 7' },
-    { category: 'Item 8', description: 'Description for Item 7' },
-    { category: 'Item 9', description: 'Description for Item 7' },
-  ];
-
-  description = '';
-
-  updateDescription(description: string) {
-    this.description = description;
-  }
-
-  isScrollable(): boolean {
-    return this.items.length >= 9;
-  }
-  
-
 }
 
