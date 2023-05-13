@@ -53,7 +53,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter{
                 );
                 SecurityContextHolder.getContext().setAuthentication(authToken);
                 
-                System.out.println("El valor de authToken es: " + authToken.toString());  //muestra el valor
+                
             }
         }
         filterChain.doFilter(request, response);

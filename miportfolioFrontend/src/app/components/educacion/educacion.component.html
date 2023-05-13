@@ -1,42 +1,44 @@
 <div class="row">
-    <h1 class="text-center padding" id="padding1">Estudios</h1>
-    <div id="margen">
-      <button type="button" class="btn btn-primary" id="btn_exp" routerLink="/nuevaedu" *ngIf="islogged">
-        Nuevo Estudio
-      </button>
-    </div>
+  <h1 class="text-center padding" id="padding1">Estudios</h1>
+  <div id="margen">
+    <button type="button" class="btn btn-primary" id="btn_exp" routerLink="/nuevaedu" *ngIf="islogged">
+      Nuevo Estudio
+    </button>
   </div>
+</div>
 
 <div class="row card">
-    <div class="col-4">
+  <div class="col-4">
 
-      <div class="list-group" [ngStyle]="{'max-height': isScrollable() ? '337px' : 'auto', 'overflow': isScrollable() ? 'auto' : 'visible'}">
-        <div *ngFor="let Educacion of edu" (click)="updateDescription(Educacion.descripcionEdu, Educacion.decompressedImageData, Educacion.id)">
+    <div class="list-group"
+      [ngStyle]="{'max-height': isScrollable() ? '337px' : 'auto', 'overflow': isScrollable() ? 'auto' : 'visible'}">
+      <div *ngFor="let Educacion of edu"
+        (click)="updateDescription(Educacion.descripcionEdu, Educacion.decompressedImageData, Educacion.id)">
 
-          <a class="list-group-item list-group-item-action">{{ Educacion.nombreEdu }}</a>
+        <a class="list-group-item list-group-item-action">{{ Educacion.nombreEdu }}</a>
 
-          <div *ngIf="islogged" class="botones_editar">
-            <button type="button" routerLink="/editedu/{{idActual}}" class="btn btn-primary"
-              style="--bs-btn-padding-x: .4rem; --bs-btn-padding-y: .4rem;" id="btn_exp">
-              <i class="bi bi-pen" style="color: white;"></i>
-            </button>
-            <button type="button" (click)="delete(idActual)" class="btn btn-primary"
-              style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .3rem; margin-left: 5px;" id="btn_exp">
-              <i class="bi bi-trash" style="font-size: 1.2rem; color: white;"></i>
-            </button>
-          </div>
-
+        <div *ngIf="islogged" class="botones_editar">
+          <button type="button" routerLink="/editedu/{{idActual}}" class="btn btn-primary"
+            style="--bs-btn-padding-x: .4rem; --bs-btn-padding-y: .4rem;" id="btn_exp">
+            <i class="bi bi-pen" style="color: white;"></i>
+          </button>
+          <button type="button" (click)="delete(idActual)" class="btn btn-primary"
+            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .3rem; margin-left: 5px;" id="btn_exp">
+            <i class="bi bi-trash" style="font-size: 1.2rem; color: white;"></i>
+          </button>
         </div>
+
       </div>
-      
     </div>
-    <div class="col-8" style="padding-right: 12px; max-height: 337px;">
-        <div>
-            <h4>{{ description }}</h4>
-            <div style="display: flex; justify-content: center;">
-              <img [src]="imageUrl" style="max-height: 299px; max-width: 100%;" />
-            </div>
-          </div>
-          
+
+  </div>
+  <div class="col-8" style="padding-right: 12px; max-height: 337px;">
+    <div>
+      <h4>{{ description }}</h4>
+      <div style="display: flex; justify-content: center; align-items: center; height: 271px;">
+        <img *ngIf="imageUrl" [src]="imageUrl" style="max-height: 271px; max-width: 100%;" />
+      </div>
     </div>
   </div>
+  
+</div>

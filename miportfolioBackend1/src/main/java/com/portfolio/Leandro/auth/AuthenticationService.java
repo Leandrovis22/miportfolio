@@ -39,8 +39,7 @@ public class AuthenticationService {
                 .build();
         repository.save(user);
         var jwtToken = jwtService.generateToken(user);
-        System.out.println("User authorities en el register de AuthenticationService: " + user.getAuthorities()); // muestra por consola
-        //esto dice null
+        
         return AuthenticationResponse.builder()
                 .token(jwtToken)
                 .build();
@@ -59,8 +58,7 @@ public class AuthenticationService {
                 .orElseThrow();
         var jwtToken = jwtService.generateToken(user);
         
-        System.out.println("authorities raw en el authenticate de AuthenticationService: " + user.getAuthorities()); // muestra por consola
-        //
+        
         
         return AuthenticationResponse.builder()
                 .token(jwtToken)

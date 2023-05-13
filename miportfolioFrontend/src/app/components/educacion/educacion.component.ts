@@ -57,9 +57,14 @@ export class EducacionComponent implements OnInit {
   
   updateDescription(description: string, decompressedImageData: string, idx: number): void {
     this.description = description;
-    this.imageUrl = 'data:image/jpeg;base64,' + decompressedImageData;
+    if (decompressedImageData) {
+      this.imageUrl = 'data:image/jpeg;base64,' + decompressedImageData;
+    } else {
+      this.imageUrl = '';
+    }
     this.idActual = idx;
   }
+  
   
 
   isScrollable(): boolean {

@@ -1,19 +1,36 @@
-.wrap{
-height: 100%;
+.wrap {
+    height: 100%;
 }
-.container-fluid{
-height: 100%;
+
+.container-fluid {
+    height: 100%;
 }
-body{
-overflow-x: hidden;
+
+body {
+    overflow-x: hidden;
 }
-.card{padding: 30px 40px;
-margin-top: 60px;
-margin-bottom: 60px;
-border: none !important;
-box-shadow: 0 6px 12px 0 rgba(0,0,0,0.2)
+
+.card {
+    padding: 30px 40px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border: none !important;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
 }
-input, textarea, button{padding: 8px 15px;border-radius: 5px !important;
-margin: 5px 0px;box-sizing: border-box;border: 1px solid #ccc;
-font-size: 18px !important;
-font-weight: 300}
+
+input,
+textarea,
+button {
+    padding: 8px 15px;
+    border-radius: 5px !important;
+    margin: 5px 0px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    font-size: 18px !important;
+    font-weight: 300
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}

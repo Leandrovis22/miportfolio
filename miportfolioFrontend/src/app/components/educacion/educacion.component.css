@@ -22,6 +22,7 @@
 }
 
 .row.card {
+    height: 363px;
     flex-direction: row;
     background-color: inherit;
     padding-top: 12px;
