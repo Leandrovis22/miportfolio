@@ -1,3 +1,13 @@
+#padding1{
+    padding: 20px;
+}
+
+#margen{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
 #btn_exp {
     background-color: #000066;
     border-color: #000066;
