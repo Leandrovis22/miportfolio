@@ -17,13 +17,47 @@
     padding-left: 0px ;
     padding-right: 58px ;
 }
+.paddingizqder2{
+    padding-left: 0px ;
+    padding-right: 58px ;
+    text-align: right;
+}
 .margen1{
     margin-bottom: 30px;
 }
+#margen{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#btn_exp {
+    background-color: #000066;
+    border-color: #000066;
+    color: white;
+}
+
+.botones_editar{
+    position: relative;
+    height: 0;
+    width: 92px;
+    top: -17px;
+    right: -84%;
+}
+
+.bi-trash{
+    top: 1.2px;
+    left: 0.4px;
+    position: relative;
+}
+
 .imgboxshadow{
     box-shadow: 10px 10px 6px 0px rgba(36,32,214,0.67);
 -webkit-box-shadow: 10px 10px 6px 0px rgba(36,32,214,0.67);
--moz-box-shadow: 10px 10px 6px 0px rgba(36,32,214,0.67);
+}
+.imgboxshadow1{
+    box-shadow: -10px 10px 6px 0px rgba(36,32,214,0.67);
+    -webkit-box-shadow: -10px 10px 6px 0px rgba(36,32,214,0.67);
 }
 @media(max-width:767px){
     .paddingizqder{

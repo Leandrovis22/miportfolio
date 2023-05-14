@@ -1,15 +1,51 @@
 <div class="row">
     <h1 class="text-center" id="padding1">Proyectos realizados</h1>
-    <div class="row nopadding margen1">
-        <div class="col-sm-12 col-md-7 col-lg-7 nopadding paddingizqder">
-            <h2>Portfolio Web</h2>
-            <p>Comenzé a realizar este proyecto para Argentina programa a comienzos de Febrero de 2023. 
-                Consistió de mucha investigación, prueba y error de codigo para obtener lo que me habia 
-                imaginado. Como pueden ver es la pagina web actual y es posible acceder al codigo en mi repositorio de Github.
-            </p>
-        </div>
-        <div class="col-sm-12 col-md-5 col-lg-5 nopadding paddingizqder1 align-self-center">
-            <img src="../../../assets/img de portfolio en progreso.png" class="img-fluid imgboxshadow">
-        </div>
+
+    <div id="margen">
+        <button type="button" class="btn btn-primary" id="btn_exp" routerLink="/nuevoproyecto" *ngIf="islogged">
+          Nuevo proyecto
+        </button>
     </div>
+
+    
+    <div class="nopadding margen1" *ngFor="let Proyecto of proyecto; let i = index">
+
+        <div class="row nopadding margen1">
+            <div *ngIf="islogged" class="botones_editar">
+                <button type="button" routerLink="/editproyecto/{{Proyecto.id}}" class="btn btn-primary"
+                style="--bs-btn-padding-x: .4rem; --bs-btn-padding-y: .4rem;" id="btn_exp">
+                <i class="bi bi-pen" style="color: white;"></i>
+                </button>
+                <button type="button" (click)="delete(Proyecto.id)" class="btn btn-primary"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .3rem; margin-left: 5px;" id="btn_exp">
+                <i class="bi bi-trash" style="font-size: 1.2rem; color: white;"></i>
+                </button>
+            </div>
+
+            <div class="row nopadding margen1" *ngIf="i % 2 === 0">
+                <div class="col-sm-12 col-md-7 col-lg-7 nopadding paddingizqder">
+                    <h2>{{Proyecto.titulo}} </h2>
+                    <p style="height: 168px;"> {{Proyecto.descripcion}} </p>
+                </div>
+                <div class="col-sm-12 col-md-5 col-lg-5 nopadding paddingizqder1 align-self-center">
+                    <img *ngIf="Proyecto.decompressedImageData" [src]="'data:image/jpeg;base64,' + Proyecto.decompressedImageData" class="img-fluid imgboxshadow">
+                </div>
+            </div>
+
+            <div class="row nopadding margen1" *ngIf="i % 2 !== 0">
+                <div class="col-sm-12 col-md-5 col-lg-5 nopadding paddingizqder align-self-center">
+                    <img *ngIf="Proyecto.decompressedImageData" [src]="'data:image/jpeg;base64,' + Proyecto.decompressedImageData" class="img-fluid imgboxshadow1">
+                </div>
+                <div class="col-sm-12 col-md-7 col-lg-7 nopadding paddingizqder2">
+                    <h2>{{Proyecto.titulo}} </h2>
+                    <p style="height: 168px;"> {{Proyecto.descripcion}} </p>
+                </div>
+            </div>
+
+        </div>  
+
+    </div>
+
+       
+
 </div>
