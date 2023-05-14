@@ -1,75 +1,44 @@
+
 <div class="row">
     <h1 class="text-center" id="padding1">Hard & Soft Skills</h1>
-    <div class="row paddingtopbot">
-        <div class="col-sm-4 col-md-4 col-lg-4 nopadding progress_backgroundhtml" align="center">
-            <circle-progress
-                [percent]="80"
-                [animation]="true"
-                [title]="[' ',' ',' ',' ','80%']"
-                [subtitle]="['']"
-                [backgroundGradient]="false"
-                [backgroundColor]="'transparent'"
-                [titleFontSize]="'31'"
-            ></circle-progress>
-        </div>
-        <div class="col-sm-4 col-md-4 col-lg-4 nopadding progress_backgroundcss" align="center">
-            <circle-progress
-                [percent]="50"
-                [animation]="true"
-                [title]="[' ',' ',' ',' ','50%']"
-                [subtitle]="['']"
-                [backgroundGradient]="false"
-                [backgroundColor]="'transparent'"
-                [titleFontSize]="'31'"
-            ></circle-progress>
-        </div>
-        <div class="col-sm-4 col-md-4 col-lg-4 nopadding progress_backgroundjava" align="center">
-            <circle-progress
-                [percent]="90"
-                [animation]="true"
-                [title]="[' ',' ',' ',' ','90%']"
-                [subtitle]="['']"
-                [backgroundGradient]="false"
-                [backgroundColor]="'transparent'"
-                [titleFontSize]="'31'"
-            ></circle-progress>
-        </div>
+    <div id="margen">
+      <button type="button" class="btn btn-primary" id="btn_exp" routerLink="/nuevaskill" *ngIf="islogged">
+        Nueva skill
+      </button>
     </div>
+    <div class="row paddingtopbot"  >
+       
+        <div class="col-sm-4 col-md-4 col-lg-4 nopadding "
+            [ngStyle]="{'background-image': 'url(data:image/jpeg;base64,' + Skill.decompressedImageData + ')'}"
+            style="background-repeat: no-repeat; background-position: bottom 65% right 50%; background-size: 25%;" align="center"
+            *ngFor="let Skill of skill;">
+            <div>
+              <div *ngIf="islogged" class="botones_editar">
+                  <button type="button" routerLink="/editskill/{{Skill.id}}" class="btn btn-primary"
+                    style="--bs-btn-padding-x: .4rem; --bs-btn-padding-y: .4rem;" id="btn_exp">
+                    <i class="bi bi-pen" style="color: white;"></i>
+                  </button>
+                  <button type="button" (click)="delete(Skill.id)" class="btn btn-primary"
+                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .3rem; margin-left: 5px;" id="btn_exp">
+                    <i class="bi bi-trash" style="font-size: 1.2rem; color: white;"></i>
+                  </button>
+              </div>
 
-    <div class="row paddingtopbot2">
-        <div class="col-sm-4 col-md-4 col-lg-4 nopadding progress_backgroundteamwork" align="center">
-            <circle-progress
-                [percent]="100"
-                [animation]="true"
-                [title]="[' ',' ',' ',' ','100%']"
-                [subtitle]="[' ','Dispuesto de','aprender']"
-                [backgroundGradient]="false"
-                [backgroundColor]="'transparent'"
-                [titleFontSize]="'31'"
-                [subtitleFontSize]="'14'"
-            ></circle-progress>
+              <circle-progress
+              [percent]="parseInt(Skill.percent)"
+              [animation]="true"
+              [title]="[' ',' ',' ',' ',' ' + Skill.percent + '%']"
+              [subtitle]="['' + Skill.titulo, ' ']"
+              [subtitleFontSize]="'28'"
+              [backgroundGradient]="false"
+              [backgroundColor]="'transparent'"
+              [titleFontSize]="'31'"
+              ></circle-progress>
+
+            </div>
+
         </div>
-        <div class="col-sm-4 col-md-4 col-lg-4 nopadding progress_backgroundingles" align="center">
-            <circle-progress
-                [percent]="100"
-                [animation]="true"
-                [title]="[' ',' ',' ','100%']"
-                [subtitle]="['Ingles',' ']"
-                [backgroundGradient]="false"
-                [backgroundColor]="'transparent'"
-                [titleFontSize]="'31'"
-            ></circle-progress>
-        </div>
-        <div class="col-sm-4 col-md-4 col-lg-4 nopadding progress_backgroundgithub" align="center">
-            <circle-progress
-                [percent]="40"
-                [animation]="true"
-                [title]="[' ',' ',' ',' ','40%']"
-                [subtitle]="['']"
-                [backgroundGradient]="false"
-                [backgroundColor]="'transparent'"
-                [titleFontSize]="'31'"
-            ></circle-progress>
-        </div>
+        
     </div>
 </div>
+

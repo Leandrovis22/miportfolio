@@ -1,3 +1,28 @@
+#margen{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#btn_exp {
+    background-color: #000066;
+    border-color: #000066;
+    color: white;
+}
+
+.botones_editar{
+    position: relative;
+    top: -16px;
+    right: -37%;
+    height: 0px;
+}
+
+.bi-trash{
+    top: 1.2px;
+    left: 0.4px;
+    position: relative;
+}
+
 #padding1{
     padding: 20px;
 }
@@ -44,12 +69,7 @@
     background-position: bottom 65% right 50%;
     background-size: 20%;
 }
-.progress_backgroundingles{
-    background-image: url("../../../assets/eng.png");
-    background-repeat: no-repeat;
-    background-position: bottom 65% right 50%;
-    background-size: 25%;
-}
+
 .progress_backgroundgithub{
     background-image: url("../../../assets/git.png");
     background-repeat: no-repeat;
