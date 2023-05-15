@@ -17,6 +17,16 @@
     height: 0px;
 }
 
+@media(max-width:575px){
+    .botones_editar{
+        position: relative;
+        height: 0px;
+        width: 92px;
+        top: -5px;
+        right: -33%;
+    }
+}
+
 .bi-trash{
     top: 1.2px;
     left: 0.4px;
