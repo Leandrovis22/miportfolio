@@ -40,6 +40,7 @@ com\portfolio\Leandro\Entity\Educacion.class
 com\portfolio\Leandro\auth\RegisterRequest.class
 com\portfolio\Leandro\config\SecurityConfiguration.class
 com\portfolio\Leandro\Controller\Mensaje.class
+com\portfolio\Leandro\Controller\HealthCheckController.class
 com\portfolio\Leandro\Repository\REducacion.class
 com\portfolio\Leandro\Dto\dtoSkill.class
 com\portfolio\Leandro\Service\SExperiencia.class
