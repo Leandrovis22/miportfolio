@@ -17,7 +17,7 @@ p {
 
 .wrapper {
   animation: scroll 70s linear infinite;
-  background: url(../src/assets/fondo1.jpg), #111111;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(../../../../../Downloads/fondo1.png), #111111;
   color: #ececec;
 
   width: 100%;
