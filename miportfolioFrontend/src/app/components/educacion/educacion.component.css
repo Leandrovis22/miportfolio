@@ -96,3 +96,6 @@
     color: white;
     justify-content: center;
 }
+.active{
+    background-color: #000066;
+}
