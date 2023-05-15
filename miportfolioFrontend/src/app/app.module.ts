@@ -12,7 +12,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { HysComponent } from './components/hys/hys.component';
 import { ProyectoComponent } from './components/proyecto/proyecto.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +28,7 @@ import { EditSkillComponent } from './components/hys/edit-skill.component';
 import { NewProyectoComponent } from './components/proyecto/new-proyecto.component';
 import { EditProyectoComponent } from './components/proyecto/edit-proyecto.component';
 import { EditPersonaComponent } from './components/acerca-de/edit-persona.component';
+import { HttpErrorInterceptor } from './service/http-error.interceptor';
 
 @NgModule({
   declarations: [
@@ -98,7 +99,12 @@ import { EditPersonaComponent } from './components/acerca-de/edit-persona.compon
 
   ],
   providers: [
-    interceptorProvider
+    interceptorProvider,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent]
 })

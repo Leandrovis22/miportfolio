@@ -12,6 +12,10 @@ export class SExperienciaService {
 
   constructor(private httpClient: HttpClient) { }
 
+  public getListaURL(): string {
+    return this.expURL + 'lista';
+  }  
+
   public lista(): Observable<Experiencia[]>{
     return this.httpClient.get<Experiencia[]>(this.expURL + 'lista');
   }

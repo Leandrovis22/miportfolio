@@ -12,6 +12,10 @@ export class SSkillService {
 
   constructor(private httpClient: HttpClient) { }
 
+  public getListaURL(): string {
+    return this.eduURL + 'lista';
+  }  
+
   public lista(): Observable<Skill[]>{
     return this.httpClient.get<Skill[]>(this.eduURL + 'lista');
   }

@@ -12,6 +12,10 @@ export class SProyectoService {
 
   constructor(private httpClient: HttpClient) { }
 
+  public getListaURL(): string {
+    return this.eduURL + 'lista';
+  }  
+
   public lista(): Observable<Proyecto[]>{
     return this.httpClient.get<Proyecto[]>(this.eduURL + 'lista');
   }

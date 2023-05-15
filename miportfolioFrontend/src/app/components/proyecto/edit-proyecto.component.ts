@@ -12,7 +12,10 @@ export class EditProyectoComponent {
 
   imageFile?: File;
 
-  proyecto : Proyecto=null;
+  proyecto: Proyecto = {
+    titulo: '',
+    descripcion: ''
+  };
 
   constructor(private sProyecto: SProyectoService, private activatedRouter: ActivatedRoute, private router: Router) { }
 

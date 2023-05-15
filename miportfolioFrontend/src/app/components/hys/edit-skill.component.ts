@@ -12,7 +12,11 @@ export class EditSkillComponent {
 
   imageFile?: File;
 
-  skill : Skill=null;
+  skill: Skill = {
+    titulo: '',
+    percent: '',
+    
+  };
 
   constructor(private sSkill: SSkillService, private activatedRouter: ActivatedRoute, private router: Router) { }
 

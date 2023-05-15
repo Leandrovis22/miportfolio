@@ -13,7 +13,12 @@ export class EditPersonaComponent {
 
   imageFile?: File;
 
-  persona : Persona=null;
+  persona: Persona = {
+    nombre: '',
+    subtitulo: '',
+    descripcion: ''
+  };
+  
 
   constructor(private sPersona: PersonaService, private activatedRouter: ActivatedRoute, private router: Router) { }
 
