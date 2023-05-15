@@ -12,9 +12,7 @@ div{
     
 }
 #divdehacercadegral{
-    
-    /* color: rgb(60, 60, 156); */
-    margin-bottom: 27px;
+    min-height: 278px;
 }
 #paddingh1{
     padding: 15px;
@@ -25,6 +23,15 @@ div{
     margin-top: 16px;
     margin-bottom: 16px;
 }
+
+.botones_editar{
+    position: absolute;
+    width: 92px;
+    top: 377px;
+    right: 11%;
+}
+
+
 @media(min-width: 576px){
     #fotoperfil{
         position: absolute;

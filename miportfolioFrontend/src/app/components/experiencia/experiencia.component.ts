@@ -51,7 +51,16 @@ export class ExperienciaComponent implements OnInit{
     "dots": true,
     "infinite": true,
     "autoplay": true,
-    "autoplaySpeed": 3000
+    "autoplaySpeed": 3000,
+    "responsive": [
+      {
+        "breakpoint": 576,
+        "settings": {
+          "slidesToShow": 1,
+          "slidesToScroll": 1
+        }
+      }
+    ]
   };
   
   slickInit(e: any) {

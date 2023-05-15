@@ -1,12 +1,14 @@
 
 package com.portfolio.Leandro.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.persistence.Lob;
+import jakarta.persistence.Transient;
 
 
 @Entity
@@ -15,48 +17,79 @@ public class Persona {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
+    private String nombre;
+    private String subtitulo;
+    @Column(length = 1000)
+    private String descripcion;
     
-    @NotNull
-    @Size(min = 1, max = 50, message = "No cumple con la longitud")
-    private String Nombre;
     
-    @NotNull
-    @Size(min = 1, max = 50, message = "No cumple con la longitud")
-    private String Apellido;
+    @Transient
+    private byte[] decompressedImageData;
     
-    @Size(min = 1, max = 50, message = "No cumple con la longitud")
-    private String img;
+    @JsonIgnore
+    @Column(columnDefinition = "MEDIUMBLOB")
+    @Lob
+    private byte[] imageData;
+
+    public Persona() {
+    }
+
+    public Persona(String nombre, String subtitulo, String descripcion, byte[] imageData) {
+        this.nombre = nombre;
+        this.subtitulo = subtitulo;
+        this.descripcion = descripcion;
+        this.imageData = imageData;
+    }
     
-    public Long getId() {
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getApellido() {
-        return Apellido;
+    public String getSubtitulo() {
+        return subtitulo;
     }
 
-    public void setApellido(String Apellido) {
-        this.Apellido = Apellido;
+    public void setSubtitulo(String subtitulo) {
+        this.subtitulo = subtitulo;
     }
 
-    public String getImg() {
-        return img;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
+
+    public byte[] getDecompressedImageData() {
+        return decompressedImageData;
+    }
+
+    public void setDecompressedImageData(byte[] decompressedImageData) {
+        this.decompressedImageData = decompressedImageData;
+    }
+
+    public byte[] getImageData() {
+        return imageData;
+    }
+
+    public void setImageData(byte[] imageData) {
+        this.imageData = imageData;
+    }
+    
+    
 }

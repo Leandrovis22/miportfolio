@@ -1,74 +1,74 @@
-
 package com.portfolio.Leandro.Controller;
 
 import com.portfolio.Leandro.Entity.Persona;
-import com.portfolio.Leandro.Interface.IPersonaService;
-import java.util.Collection;
-import java.util.Iterator;
+import com.portfolio.Leandro.Service.SPersona;
+import com.portfolio.Leandro.util.ImageUtil;
+import java.io.IOException;
 import java.util.List;
-import static org.hibernate.query.sqm.SqmTreeTransformationLogger.LOGGER;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
-@RestController 
+@RestController
+@RequestMapping("persona")
 @CrossOrigin(origins = "*")
 public class PersonaController {
-    @Autowired IPersonaService ipersonaService;
+
+    @Autowired
+    SPersona sPersona;
+
+    @PutMapping("/update/{id}")
+public ResponseEntity<?> update(@PathVariable("id") int id,
+                                @ModelAttribute("nombre") String nombre,
+                                @ModelAttribute("subtitulo") String subtitulo,
+                                @ModelAttribute("descripcion") String descripcion,
+                                @ModelAttribute("image") MultipartFile image) throws IOException {
     
-    @GetMapping("personas/traer")
-    public List<Persona> getPersona(){
-        return ipersonaService.getPersona();
+        boolean isImageUpdated = image != null && !image.isEmpty();
+
+        if (!sPersona.existsById(id)) {
+            return new ResponseEntity(new Mensaje("La skill no existe"), HttpStatus.BAD_REQUEST);
+        }
+
+        Persona persona = sPersona.getOne(id).get();
+
+        if (persona == null) {
+            return new ResponseEntity(new Mensaje("La skill no existe"), HttpStatus.BAD_REQUEST);
+        }
+
+        if (isImageUpdated) {
+            byte[] compressedImageData = ImageUtil.compressImage(image.getBytes());
+            persona.setImageData(compressedImageData);
+        }
+
+        persona.setNombre(nombre);
+        persona.setSubtitulo(subtitulo);
+        persona.setDescripcion(descripcion);
+
+        sPersona.save(persona);
+
+        return new ResponseEntity(new Mensaje("Perfil actualizado"), HttpStatus.OK);
     }
-    
-    // @PreAuthorize("hasAuthority("ADMIN")") no anda el preauthorize
-    @PostMapping("/personas/crear")
-    public String createPersona(@RequestBody Persona persona){
-        ipersonaService.savePersona(persona);
-        
-    Collection<SimpleGrantedAuthority> authorities = (Collection<SimpleGrantedAuthority>) SecurityContextHolder
-        .getContext().getAuthentication().getAuthorities();
-         for (Iterator iterator = authorities.iterator(); iterator.hasNext();) {
-    SimpleGrantedAuthority simpleGrantedAuthority = (SimpleGrantedAuthority) iterator.next();
-        System.out.println(simpleGrantedAuthority.toString());
+
+    @GetMapping("/lista")
+    public ResponseEntity<List<Persona>> list() {
+        List<Persona> list = sPersona.list();
+        return new ResponseEntity(list, HttpStatus.OK);
     }
-        
-        return "La persona fue creada correctamente";
+    @GetMapping("/detail/{id}")
+    public ResponseEntity<Persona> getById(@PathVariable("id") int id){
+        if(!sPersona.existsById(id))
+            return new ResponseEntity(new Mensaje("no existe"), HttpStatus.NOT_FOUND);
+        Persona persona = sPersona.getOne(id).get();
+        return new ResponseEntity(persona, HttpStatus.OK);
     }
-    
-    @DeleteMapping("/personas/borrar/{id}")
-    public String deletePersona(@PathVariable Long id){
-        ipersonaService.deletePersona(id);
-        return "La persona fue eliminada correctamente";
-    }
-    
-    @PutMapping("/personas/editar/{id}")
-    public Persona editPersona(@PathVariable Long id,
-                               @RequestParam("nombre") String nuevoNombre,
-                               @RequestParam("apellido") String nuevoApellido,
-                               @RequestParam("img") String nuevoImg){
-        Persona persona = ipersonaService.findPersona(id);
-        
-        persona.setNombre(nuevoNombre);
-        persona.setApellido(nuevoApellido);
-        persona.setImg(nuevoImg);
-        
-        ipersonaService.savePersona(persona);
-        return persona;
-    }
-    
-    @GetMapping("/personas/traer/perfil")
-    public Persona findPersona(){
-        return ipersonaService.findPersona((long)1);
-    }
+
 }

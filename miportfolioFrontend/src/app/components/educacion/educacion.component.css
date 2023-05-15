@@ -41,6 +41,35 @@
     margin-right: 12px;
 }
 
+@media(max-width: 575px){
+    .row.card {
+        height: auto;
+        flex-direction: row;
+        background-color: inherit;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+    .list-group-item {
+        width: fit-content;
+        white-space: nowrap;
+      }
+    .list-group{
+     overflow: visible;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 5%;
+    }
+    h4{
+        justify-content: center;
+        display: flex;
+        padding-bottom: 5%;
+    }
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 15px;

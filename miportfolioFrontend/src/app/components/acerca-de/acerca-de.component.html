@@ -1,15 +1,23 @@
 <div class="row" id="divdehacercadegral">
+
+    <div *ngIf="islogged" class="botones_editar">
+        <button type="button" routerLink="/editpersona/{{persona.id}}" class="btn btn-primary"
+        style="--bs-btn-padding-x: .4rem; --bs-btn-padding-y: .4rem;" id="btn_exp">
+        <i class="bi bi-pen" style="color: white;"></i>
+        </button>
+    </div>
+
     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-        <img src="../../../assets/foto perfil.png" class="img-fluid" id="fotoperfil">
+        <img *ngIf="persona.decompressedImageData" [src]="'data:image/jpeg;base64,' + persona.decompressedImageData" class="img-fluid" id="fotoperfil">
         <span id="spanmover">
-            <p id="nombre">{{persona.nombre}} {{persona.apellido}}</p>
-            <p> Full Stack Developer Jr </p> 
+            <p id="nombre">{{persona.nombre}}</p>
+            <p> {{persona.subtitulo}} </p> 
         </span>
     </div>
     <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
         <span>
             <h1 id="paddingh1">Acerca de mí</h1>
-            <p id="paddingp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati eveniet voluptatem vel eaque architecto assumenda tempore animi aspernatur! Voluptate sapiente impedit illo placeat porro laboriosam soluta dicta, minus veritatis aspernatur.</p>
+            <p id="paddingp" style="overflow-wrap: break-word;"> {{persona.descripcion}} </p>
         </span>
     </div>
 

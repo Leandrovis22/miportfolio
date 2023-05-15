@@ -7,10 +7,7 @@ package com.portfolio.Leandro.Repository;
 import com.portfolio.Leandro.Entity.Skill;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-/**
- *
- * @author Leandro
- */
+
 public interface RSkill extends JpaRepository<Skill, Integer>{
     
 }

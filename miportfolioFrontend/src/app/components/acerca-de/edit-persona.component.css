@@ -34,17 +34,3 @@ button {
     margin-right: 0;
     margin-left: 0;
 }
-
-#btn_exp {
-    background-color: #000066;
-    border-color: #000066;
-    color: white;
-}
-
-.botones_editar{
-    position: relative;
-    height: 0;
-    width: 92px;
-    top: -17px;
-    right: -84%;
-}

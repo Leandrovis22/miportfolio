@@ -1,6 +1,5 @@
 #padding1{
     padding: 20px;
-    margin-bottom: 40px;
 }
 .row{
     margin-right: 0;
@@ -70,5 +69,13 @@
     }
     h2{
         text-align: center;
+    }
+}
+
+@media(max-width:767px){
+    p{
+        display: flex;
+        align-items: center;
+        height: auto !important;
     }
 }

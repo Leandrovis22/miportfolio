@@ -1,12 +1,15 @@
-export class persona{
+export class Persona{
     id?: number;
     nombre: string;
-    apellido: string;
-    img: string;
-
-    constructor(nombre: string, apellido: string, img: string){
-        this.nombre = nombre;
-        this.apellido= apellido;
-        this.img=img;
+    subtitulo: string;
+    descripcion: string;
+    decompressedImageData?: string;
+    imageFile?: File;
+  
+    constructor(nombre: string, subtitulo: string, descripcion: string, imageFile?: File) {
+      this.nombre = nombre;
+      this.subtitulo = subtitulo;
+      this.descripcion = descripcion;
+      this.imageFile = imageFile;
     }
-}
+  }
