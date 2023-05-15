@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Persona } from '../model/persona.model';
+import { BASE_URL } from './constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonaService {
-  personaURL = 'http://localhost:8080/persona/';
+  personaURL = BASE_URL + 'persona/';
 
   constructor(private httpClient: HttpClient) { }
 
