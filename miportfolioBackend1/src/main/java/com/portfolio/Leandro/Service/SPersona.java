@@ -19,6 +19,7 @@ public class SPersona {
     @Autowired
     RPersona rPersona; 
     
+   
     public List<Persona> list() {
         List<Persona> personas = rPersona.findAll();
         for (Persona persona : personas) {

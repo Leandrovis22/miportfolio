@@ -55,34 +55,3 @@
     padding-top: 0px;
     padding-bottom: 0%;
 }
-.progress_backgroundhtml{
-    background-image: url("../../../assets/html.png");
-    background-repeat: no-repeat;
-    background-position: bottom 57% right 50%;
-    background-size: 25%;
-}
-.progress_backgroundcss{
-    background-image: url("../../../assets/CSS.png");
-    background-repeat: no-repeat;
-    background-position: bottom 57% right 50%;
-    background-size: 25%;
-}
-.progress_backgroundjava{
-    background-image: url("../../../assets/js.png");
-    background-repeat: no-repeat;
-    background-position: bottom 57% right 50%;
-    background-size: 25%;
-}
-.progress_backgroundteamwork{
-    background-image: url("../../../assets/grupal.png");
-    background-repeat: no-repeat;
-    background-position: bottom 65% right 50%;
-    background-size: 20%;
-}
-
-.progress_backgroundgithub{
-    background-image: url("../../../assets/git.png");
-    background-repeat: no-repeat;
-    background-position: bottom 57% right 50%;
-    background-size: 25%;
-}
