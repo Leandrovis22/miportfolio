@@ -3,7 +3,6 @@ package com.portfolio.Leandro.Controller;
 import com.portfolio.Leandro.Entity.Persona;
 import com.portfolio.Leandro.Service.SPersona;
 import com.portfolio.Leandro.util.ImageUtil;
-import jakarta.annotation.PostConstruct;
 import java.io.IOException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
