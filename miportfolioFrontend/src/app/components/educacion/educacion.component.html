@@ -1,7 +1,7 @@
 <div class="row" style="--bs-gutter-x: 0px;">
   <h1 class="text-center padding" id="padding1">Estudios</h1>
-  <div id="margen">
-    <button type="button" class="btn btn-primary" id="btn_exp" routerLink="/nuevaedu" *ngIf="islogged">
+  <div id="margen" *ngIf="islogged">
+    <button type="button" class="btn btn-primary" id="btn_exp" routerLink="/nuevaedu">
       Nuevo Estudio
     </button>
   </div>
@@ -32,10 +32,12 @@
     </div>
 
   </div>
-  <div class="col-sm-8 col-12" style="padding-right: 12px; max-height: 337px;">
+  <div class="col-sm-8 col-12" id="divdescfoto" style="padding-right: 12px; max-height: 337px;">
     <div>
-      <h4>{{ description }}</h4>
-      <div style="display: flex; justify-content: center; align-items: center; height: 271px;">
+      <div class="parent">
+        <h4>{{ description }}</h4>
+      </div>
+      <div id="divdelafoto" style="display: flex; justify-content: center; align-items: center; height: 271px;">
         <img *ngIf="imageUrl" [src]="imageUrl" style="max-height: 271px; max-width: 100%;" />
       </div>
     </div>

@@ -1,8 +1,8 @@
 <div class="row">
     <h1 class="text-center" id="padding1">Proyectos realizados</h1>
 
-    <div id="margen">
-        <button type="button" class="btn btn-primary" id="btn_exp" routerLink="/nuevoproyecto" *ngIf="islogged">
+    <div id="margen" *ngIf="islogged">
+        <button type="button" class="btn btn-primary" id="btn_exp" routerLink="/nuevoproyecto" >
           Nuevo proyecto
         </button>
     </div>
@@ -10,7 +10,7 @@
     
     <div class="nopadding margen1" *ngFor="let Proyecto of proyecto; let i = index">
 
-        <div class="row nopadding margen1">
+        <div class="row nopadding">
             <div *ngIf="islogged" class="botones_editar">
                 <button type="button" routerLink="/editproyecto/{{Proyecto.id}}" class="btn btn-primary"
                 style="--bs-btn-padding-x: .4rem; --bs-btn-padding-y: .4rem;" id="btn_exp">

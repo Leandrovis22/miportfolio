@@ -41,16 +41,13 @@
     height: 0;
     width: 92px;
     top: -17px;
-    right: -84%;
+    right: -73%;
 }
 
 @media(max-width:575px){
-    .botones_editar{
-        position: relative;
-        height: 0;
-        width: 92px;
-        top: -17px;
-        right: -84%;
+  
+    p{
+        text-align: justify;
     }
 }
 

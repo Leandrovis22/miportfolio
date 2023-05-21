@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "portfolio-frontend-leandro"
-  }
+    "default": "viscolungoleandro",
+    "portfolio-frontend-leandro-1": "portfolio-frontend-leandro-1"
+  },
+  "targets": {},
+  "etags": {}
 }

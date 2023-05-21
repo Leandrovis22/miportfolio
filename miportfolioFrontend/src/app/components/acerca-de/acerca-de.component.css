@@ -12,54 +12,80 @@ div{
     
 }
 #divdehacercadegral{
-    min-height: 278px;
+    min-height: 242px;
 }
 #paddingh1{
     padding: 15px;
     margin-top: 8px;
 }
 #paddingp{
-    padding: 10px;
-    margin-top: 16px;
-    margin-bottom: 16px;
+    padding: 0px;
+    margin: 0px;
 }
 
 .botones_editar{
-    position: absolute;
-    width: 92px;
-    top: 377px;
-    right: 11%;
+    position: relative;
+    width: 0px;
+    height: 0px;
+    right: -84%;
 }
 
 
 @media(min-width: 576px){
     #fotoperfil{
         position: absolute;
-        width: 15%;
+        width: 22%;
         border-radius: 100%;
-        /* box-shadow: 3px 3px 3px grey; */
-        left: 17%;
-        top: 327px;
+        left: 13%;
+        top: 236px;
     }
 }
-@media(min-width: 1116px){
+
     #spanmover{
         left: 5%;
-        top: 80px;
+        top: 33%;
         position: relative;
+    
     }
-}
-@media(min-width: 742px) and (max-width:1115px){
-    #spanmover{
-        left: 5%;
-        top: 132px;
-        position: relative;
-    }
-}
+
+
 @media(min-width: 576px) and (max-width:741px){
     #spanmover{
         left: 5%;
-        top: 160px;
+        top: 113px;
         position: relative;
     }
 }
+@media(max-width: 575px){
+    #fotoperfil{
+        width: 50%;
+        border-radius: 100%;
+        position: absolute;
+        top: 12%;
+        left: 25%;
+    }
+    #divdespans{
+        padding-top: 108px;
+    }
+    #nombre{
+        font-size: 23px;
+    }
+    #paddingh1{
+        padding: 15px;
+        margin: 0px;
+    }
+    #spanmover{
+        position: inherit;
+    }
+}
+@media(max-width: 432px){
+    #fotoperfil{
+        width: 50%;
+        border-radius: 100%;
+        position: absolute;
+        top: 14%;
+        left: 25%;
+    }
+    
+}
+
