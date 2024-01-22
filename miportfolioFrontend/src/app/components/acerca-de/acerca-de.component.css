@@ -30,6 +30,16 @@ div{
     right: -84%;
 }
 
+@media (min-width: 1081px) {
+    #nombre {
+        font-size: 33px;
+        margin-top: 0%;
+    }
+    #subtitle {
+        font-size: 25px;
+    }
+}
+
 
 @media(min-width: 576px){
     #fotoperfil{

@@ -44,6 +44,16 @@
     right: -73%;
 }
 
+@media(max-width:768px){
+    .col-sm-12.col-md-7.col-lg-7 {
+        order: 1;
+    }
+    .col-sm-12.col-md-5.col-lg-5 {
+        order: 2;
+    }
+}
+
+
 @media(max-width:575px){
   
     p{
@@ -74,6 +84,11 @@
         padding-left: 6% ;
         padding-right: 6% ;
     }
+    .paddingizqder2{
+        padding-left: 17px ;
+        padding-right: 17px ;
+        text-align: left;
+    }
     h2{
         text-align: center;
     }
@@ -81,7 +96,7 @@
 
 @media(max-width:767px){
     p{
-        display: flex;
+        display: contents;
         align-items: center;
         height: auto !important;
     }

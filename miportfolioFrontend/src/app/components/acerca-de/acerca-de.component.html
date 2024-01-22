@@ -13,7 +13,7 @@
         <img *ngIf="persona?.decompressedImageData" [src]="'data:image/jpeg;base64,' + persona.decompressedImageData" class="img-fluid" id="fotoperfil">
         <span id="spanmover">
             <p id="nombre">{{persona?.nombre}}</p>
-            <p> {{persona?.subtitulo}} </p> 
+            <p id="subtitle"> {{persona?.subtitulo}} </p> 
         </span>
     </div>
     <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">

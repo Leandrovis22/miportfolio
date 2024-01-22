@@ -41,7 +41,7 @@
     margin-right: 12px;
 }
 
-@media(max-width: 575px){
+@media(max-width: 834px){
     .row.card {
         height: auto;
         flex-direction: row;

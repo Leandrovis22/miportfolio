@@ -25,7 +25,8 @@
             <div class="row nopadding margen1" *ngIf="i % 2 === 0">
                 <div class="col-sm-12 col-md-7 col-lg-7 nopadding paddingizqder">
                     <h2>{{Proyecto.titulo}} </h2>
-                    <p style="height: 168px;"> {{Proyecto.descripcion}} </p>
+                    <p style="height: 168px;" [innerHTML]="formatDescription(Proyecto.descripcion)">
+
                 </div>
                 <div class="col-sm-12 col-md-5 col-lg-5 nopadding paddingizqder1 align-self-center">
                     <img *ngIf="Proyecto.decompressedImageData" [src]="'data:image/jpeg;base64,' + Proyecto.decompressedImageData" class="img-fluid imgboxshadow">
@@ -38,7 +39,8 @@
                 </div>
                 <div class="col-sm-12 col-md-7 col-lg-7 nopadding paddingizqder2">
                     <h2>{{Proyecto.titulo}} </h2>
-                    <p style="height: 168px;"> {{Proyecto.descripcion}} </p>
+                    <p style="height: 168px;" [innerHTML]="formatDescription(Proyecto.descripcion)">
+
                 </div>
             </div>
 
