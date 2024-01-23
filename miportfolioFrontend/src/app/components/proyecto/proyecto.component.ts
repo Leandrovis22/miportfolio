@@ -26,11 +26,11 @@ export class ProyectoComponent implements OnInit {
   }
 
   formatDescription(description: string): string {
-    const urlPattern = /\b((http|https):\/\/?)[\w.-]+(?:\.com)\b/gi;
-    return description.replace(urlPattern, function(url) {
-        return `<a class="project-link" href="${url}" target="_blank">${url}</a>`;
+    const urlPattern = /\b((http|https):\/\/?)[\w.-]+(?:\.com|\.app)\b/gi;
+    return description.replace(urlPattern, function (url) {
+      return `<a class="project-link" href="${url}" target="_blank">${url}</a>`;
     });
-}
+  }
 
 
   cargarProyecto(): void {
