@@ -10,14 +10,13 @@ import { BASE_URL } from './constants';
 export class PersonaService {
   personaURL = BASE_URL + 'persona/';
 
+  private localDataUrl = 'assets/persona.json'; // Ruta del archivo JSON local
+
   constructor(private httpClient: HttpClient) { }
 
-  public getListaURL(): string {
-    return this.personaURL + 'lista';
-  }  
-
+  // Método para obtener la lista desde el JSON local
   public lista(): Observable<Persona[]>{
-    return this.httpClient.get<Persona[]>(this.personaURL + 'lista');
+    return this.httpClient.get<Persona[]>(this.localDataUrl);
   }
 
   public detail(id: number): Observable<Persona>{

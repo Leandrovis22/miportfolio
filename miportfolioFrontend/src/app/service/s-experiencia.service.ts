@@ -10,14 +10,13 @@ import { BASE_URL } from './constants';
 export class SExperienciaService {
   expURL = BASE_URL + 'explab/'
 
+  private localDataUrl = 'assets/explab.json'; // Ruta del archivo JSON local
+
   constructor(private httpClient: HttpClient) { }
 
-  public getListaURL(): string {
-    return this.expURL + 'lista';
-  }  
-
+  // Método para obtener la lista desde el JSON local
   public lista(): Observable<Experiencia[]>{
-    return this.httpClient.get<Experiencia[]>(this.expURL + 'lista');
+    return this.httpClient.get<Experiencia[]>(this.localDataUrl);
   }
 
   public detail(id: number): Observable<Experiencia>{

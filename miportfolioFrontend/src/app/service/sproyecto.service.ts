@@ -10,14 +10,13 @@ import { BASE_URL } from './constants';
 export class SProyectoService {
   eduURL = BASE_URL + 'proyecto/'
 
+  private localDataUrl = 'assets/proyecto.json'; // Ruta del archivo JSON local
+
   constructor(private httpClient: HttpClient) { }
 
-  public getListaURL(): string {
-    return this.eduURL + 'lista';
-  }  
-
+  // Método para obtener la lista desde el JSON local
   public lista(): Observable<Proyecto[]>{
-    return this.httpClient.get<Proyecto[]>(this.eduURL + 'lista');
+    return this.httpClient.get<Proyecto[]>(this.localDataUrl);
   }
 
   public detail(id: number): Observable<Proyecto>{

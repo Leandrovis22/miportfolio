@@ -10,14 +10,13 @@ import { BASE_URL } from './constants';
 export class SSkillService {
   eduURL = BASE_URL + 'skill/'
 
+  private localDataUrl = 'assets/skill.json'; // Ruta del archivo JSON local
+
   constructor(private httpClient: HttpClient) { }
 
-  public getListaURL(): string {
-    return this.eduURL + 'lista';
-  }  
-
+  // Método para obtener la lista desde el JSON local
   public lista(): Observable<Skill[]>{
-    return this.httpClient.get<Skill[]>(this.eduURL + 'lista');
+    return this.httpClient.get<Skill[]>(this.localDataUrl);
   }
 
   public detail(id: number): Observable<Skill>{

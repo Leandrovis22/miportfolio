@@ -17,7 +17,6 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
-import { interceptorProvider } from './service/interceptor-service';
 import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component';
 import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
@@ -28,7 +27,6 @@ import { EditSkillComponent } from './components/hys/edit-skill.component';
 import { NewProyectoComponent } from './components/proyecto/new-proyecto.component';
 import { EditProyectoComponent } from './components/proyecto/edit-proyecto.component';
 import { EditPersonaComponent } from './components/acerca-de/edit-persona.component';
-import { HttpErrorInterceptor } from './service/http-error.interceptor';
 
 @NgModule({
   declarations: [
@@ -97,14 +95,6 @@ import { HttpErrorInterceptor } from './service/http-error.interceptor';
     }),
     AppRoutingModule,
 
-  ],
-  providers: [
-    interceptorProvider,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: HttpErrorInterceptor,
-      multi: true,
-    },
   ],
   bootstrap: [AppComponent]
 })

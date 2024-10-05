@@ -1,4 +1,4 @@
-import { HttpRequest, HttpHandler, HttpEvent, HTTP_INTERCEPTORS } from "@angular/common/http";
+/* import { HttpRequest, HttpHandler, HttpEvent, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { TokenService } from "./token.service";
 import { Injectable } from "@angular/core";
@@ -59,3 +59,4 @@ export const interceptorProvider = [{
 //o que si req.url es "this.seducacionService.getListaURL()" tampoco se aplique el interceptor
 //o que si req.url es "this.sproyectoService.getListaURL()" tampoco se aplique el interceptor
 //o que si req.url es "this.sskillService.getListaURL()" tampoco se aplique el interceptor
+ */

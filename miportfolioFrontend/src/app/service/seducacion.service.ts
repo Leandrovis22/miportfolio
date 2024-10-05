@@ -10,14 +10,13 @@ import { BASE_URL } from './constants';
 export class SEducacionService {
   eduURL = BASE_URL + 'educ/'
 
+  private localDataUrl = 'assets/educ.json'; // Ruta del archivo JSON local
+
   constructor(private httpClient: HttpClient) { }
 
-  public getListaURL(): string {
-    return this.eduURL + 'lista';
-  }
-
+  // Método para obtener la lista desde el JSON local
   public lista(): Observable<Educacion[]>{
-    return this.httpClient.get<Educacion[]>(this.eduURL + 'lista');
+    return this.httpClient.get<Educacion[]>(this.localDataUrl);
   }
 
   public detail(id: number): Observable<Educacion>{
